@@ -1,0 +1,82 @@
+{
+	"_type": "export",
+	"__export_format": 4,
+	"__export_date": "2025-05-09T20:00:00.000Z",
+	"__export_source": "insomnia.desktop.app:v2025.1.0",
+	"resources": [
+		{
+			"_id": "req_usuarios_listar",
+			"name": "GET - Listar Usuários",
+			"method": "GET",
+			"url": "http://localhost:8080/usuarios",
+			"headers": [
+				{ "name": "Authorization", "value": "Basic YWRtaW46MTIzNDU2" }
+			],
+			"_type": "request"
+		},
+		{
+			"_id": "req_usuarios_id",
+			"name": "GET - Usuário por ID",
+			"method": "GET",
+			"url": "http://localhost:8080/usuarios/1",
+			"headers": [
+				{ "name": "Authorization", "value": "Basic YWRtaW46MTIzNDU2" }
+			],
+			"_type": "request"
+		},
+		{
+			"_id": "req_usuarios_create",
+			"name": "POST - Criar Usuário",
+			"method": "POST",
+			"url": "http://localhost:8080/usuarios",
+			"headers": [
+				{ "name": "Content-Type", "value": "application/json" },
+				{ "name": "Authorization", "value": "Basic YWRtaW46MTIzNDU2" }
+			],
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"nome\": \"João Silva\",\n  \"username\": \"joao\",\n  \"senha\": \"123456\",\n  \"perfil\": \"USER\"\n}"
+			},
+			"_type": "request"
+		},
+		{
+			"_id": "req_usuarios_update",
+			"name": "PUT - Atualizar Usuário",
+			"method": "PUT",
+			"url": "http://localhost:8080/usuarios/1",
+			"headers": [
+				{ "name": "Content-Type", "value": "application/json" },
+				{ "name": "Authorization", "value": "Basic YWRtaW46MTIzNDU2" }
+			],
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"nome\": \"João Atualizado\",\n  \"username\": \"joao\",\n  \"senha\": \"nova123\",\n  \"perfil\": \"USER\"\n}"
+			},
+			"_type": "request"
+		},
+		{
+			"_id": "req_usuarios_delete",
+			"name": "DELETE - Deletar Usuário",
+			"method": "DELETE",
+			"url": "http://localhost:8080/usuarios/1",
+			"headers": [
+				{ "name": "Authorization", "value": "Basic YWRtaW46MTIzNDU2" }
+			],
+			"_type": "request"
+		},
+		{
+			"_id": "req_login",
+			"name": "POST - Login",
+			"method": "POST",
+			"url": "http://localhost:8080/auth",
+			"headers": [
+				{ "name": "Content-Type", "value": "application/json" }
+			],
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"username\": \"admin\",\n  \"senha\": \"admin\"\n}"
+			},
+			"_type": "request"
+		}
+	]
+}

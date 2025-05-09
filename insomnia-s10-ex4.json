@@ -1,0 +1,128 @@
+{
+	"_type": "export",
+	"__export_format": 4,
+	"__export_date": "2025-05-09T19:40:00.000Z",
+	"__export_source": "insomnia.desktop.app:v2025.5.9",
+	"resources": [
+		{
+			"_id": "wrk_1",
+			"created": 0,
+			"description": "Workspace para M1S10 Ex 4 - CRUD de Organizacao",
+			"name": "M1S10 - CRUD Organizacao",
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_1",
+			"parentId": "wrk_1",
+			"name": "Base Environment",
+			"data": {
+				"base_url": "http://localhost:8080"
+			},
+			"_type": "environment"
+		},
+		{
+			"_id": "req_login",
+			"parentId": "wrk_1",
+			"name": "Login (POST /auth)",
+			"url": "{{ base_url }}/auth",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"username\": \"admin\", \"senha\": \"123456\"}"
+			},
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"_type": "request"
+		},
+		{
+			"_id": "req_create_org",
+			"parentId": "wrk_1",
+			"name": "Criar Organizacao (POST /organizations)",
+			"url": "{{ base_url }}/organizations",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"nome\": \"Organizacao Sustentavel\", \"contato\": \"sustentavel@org.com\"}"
+			},
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "Basic YWRtaW46MTIzNDU2"
+				}
+			],
+			"_type": "request"
+		},
+		{
+			"_id": "req_list_org",
+			"parentId": "wrk_1",
+			"name": "Listar Organizacoes (GET /organizations)",
+			"url": "{{ base_url }}/organizations",
+			"method": "GET",
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "Basic YWRtaW46MTIzNDU2"
+				}
+			],
+			"_type": "request"
+		},
+		{
+			"_id": "req_get_org",
+			"parentId": "wrk_1",
+			"name": "Buscar Organizacao por ID (GET /organizations/1)",
+			"url": "{{ base_url }}/organizations/1",
+			"method": "GET",
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "Basic YWRtaW46MTIzNDU2"
+				}
+			],
+			"_type": "request"
+		},
+		{
+			"_id": "req_update_org",
+			"parentId": "wrk_1",
+			"name": "Atualizar Organizacao (PUT /organizations/1)",
+			"url": "{{ base_url }}/organizations/1",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\"nome\": \"Organizacao Atualizada\", \"contato\": \"contato@nova.org\"}"
+			},
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"name": "Authorization",
+					"value": "Basic YWRtaW46MTIzNDU2"
+				}
+			],
+			"_type": "request"
+		},
+		{
+			"_id": "req_delete_org",
+			"parentId": "wrk_1",
+			"name": "Excluir Organizacao (DELETE /organizations/1)",
+			"url": "{{ base_url }}/organizations/1",
+			"method": "DELETE",
+			"headers": [
+				{
+					"name": "Authorization",
+					"value": "Basic YWRtaW46MTIzNDU2"
+				}
+			],
+			"_type": "request"
+		}
+	]
+}

@@ -1,0 +1,54 @@
+{
+    "info": {
+      "name": "Projetos Sustentáveis - Spring Security",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Login (Autenticação)",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"username\": \"admin\",\n  \"senha\": \"123456\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/auth",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["auth"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Acesso a recurso protegido",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Basic YWRtaW46MTIzNDU2",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8080/usuarios",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "8080",
+            "path": ["usuarios"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
